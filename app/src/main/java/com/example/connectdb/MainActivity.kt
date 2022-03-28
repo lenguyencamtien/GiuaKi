@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var edAddress: EditText
     private lateinit var btnAdd:Button
     private lateinit var btnView:Button
-    private lateinit var btnUpdate:Button
     private lateinit var sqLiteHelper: SQLiteHelper
     private lateinit var recyclerView: RecyclerView
     private var adapter:StudentAdapter?=null
@@ -34,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         sqLiteHelper = SQLiteHelper(this)
         btnAdd.setOnClickListener {addStudent()}
         btnView.setOnClickListener {getStudent()}
-        btnUpdate.setOnClickListener{updateStudent()}
         adapter?.setOnClickItem {
             Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
             edName.setText(it.name)
@@ -67,26 +65,6 @@ class MainActivity : AppCompatActivity() {
         alert.show()
     }
 
-    private fun updateStudent() {
-        val name = edName.text.toString()
-        val email = edEmail.text.toString()
-        val contact = edContact.text.toString()
-        val address = edAddress.text.toString()
-
-        if (name==std?.name && email==std?.email && contact==std?.contact && address==std?.address){
-            Toast.makeText(this, "Record not change", Toast.LENGTH_SHORT).show()
-            return
-        }
-        if (std==null)return
-        var std=StudentModel(id=std!!.id,name=name,email=email,contact= contact, address=address)
-        val status= sqLiteHelper.updateStudent(std)
-        if (status>-1){
-            clearEditText()
-            getStudent()
-        }else{
-            Toast.makeText(this, "Update false ", Toast.LENGTH_SHORT).show()
-        }
-    }
 
     private fun getStudent() {
         val stdList = sqLiteHelper.getAllStudent()
@@ -134,7 +112,6 @@ class MainActivity : AppCompatActivity() {
         edAddress=findViewById(R.id.edAddress)
         btnAdd=findViewById(R.id.btnAdd)
         btnView=findViewById(R.id.btnView)
-        btnUpdate=findViewById(R.id.btnUpdate)
         recyclerView=findViewById(R.id.recyclerView)
     }
 }

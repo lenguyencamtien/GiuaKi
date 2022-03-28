@@ -16,21 +16,21 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:gravity="center_vertical"
-        android:text="Connect SQLite"
+        android:text="Nhập dữ liệu"
         android:textSize="20sp"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edName"
-        android:hint="Enter Name"
+        android:hint="Nhập tên"
         android:layout_margin="16dp"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edEmail"
-        android:hint="Enter Email"
+        android:hint="Nhập tuổi"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edContact"
-        android:hint="Enter Contact"
+        android:hint="Nhập sđt"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
@@ -48,41 +48,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edAddress"
-        android:hint="Enter Address"
+        android:hint="Nhập địa chỉ"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/btnAdd"
-            android:textAllCaps="false"
-            android:text="Add"
-            />
-        <Button
-            android:layout_width="wrap_content"
+            android:layout_width="162dp"
             android:layout_height="wrap_content"
+            android:text="Thêm"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/btnView"
-            android:textAllCaps="false"
-            android:layout_margin="18dp"
-            android:text="View"
-            />
-        <Button
-            android:layout_width="wrap_content"
+            android:layout_width="171dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btnUpdate"
-            android:textAllCaps="false"
             android:layout_margin="18dp"
-            android:text="Update"
-            />
+            android:text="Hiển thị"
+            android:textAllCaps="false" />
     </LinearLayout>
-<androidx.recyclerview.widget.RecyclerView
+
+    <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/recyclerView"
